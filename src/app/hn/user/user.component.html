@@ -1,0 +1,10 @@
+
+<div *ngIf="userDetail" class="detail">
+  <div class="user-top-info">
+    <p class="user-name">{{userDetail.id}}</p>
+    <p class="karma">{{userDetail.karma}} <i class="fa fa-star-o" aria-hidden="true"></i></p>
+  </div>
+  <div class="user-created-info">
+      <p>created {{userDetail.created}}</p>
+  </div>
+</div>

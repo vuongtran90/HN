@@ -1,0 +1,18 @@
+<header>
+    <div id="header" class="container">
+        <h1>
+            <a>
+                <img class="logo" src="assets/images/logo.jpg" alt="Logo"/>
+            </a>
+        </h1>
+        <ul class="navigation">
+            <li *ngFor="let nav of navigation"><a routerLink="{{nav.url}}/1" routerLinkActive="active">{{nav.name}}</a></li>
+            <li>
+                <input type="search" class="header-search">
+            </li>
+        </ul>
+        <ul class="login">
+            <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        </ul>
+    </div>
+</header>

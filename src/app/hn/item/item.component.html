@@ -1,0 +1,22 @@
+<div *ngIf="item">
+  <div class="item">
+    <div class="left-info">
+      <h2>{{item.title}}</h2>
+      <div class="info">
+        <p>submitted <span class="created-info">{{item.time_ago}}</span> <span *ngIf="feedType !== 'jobs'">by <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a></span></p>
+      </div>
+    </div>
+    <div class="right-info">
+      <p class="point" *ngIf="feedType !== 'jobs'">{{item.points}}<br/><span>points</span></p>
+      <p class="point" *ngIf="feedType === 'jobs'">1<br/><span>point</span></p>
+    </div>
+  </div>
+  <div class="comments">
+    <h3>{{item.comments_count}} comments</h3>
+    <ul class="comment-list">
+      <li *ngFor="let comment of item.comments" >
+        <app-comment [comment]="comment"></app-comment>
+      </li>
+    </ul>
+  </div>
+</div>  

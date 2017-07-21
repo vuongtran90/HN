@@ -1,0 +1,17 @@
+<div>
+  <div class="meta" [class.meta-toggle]="toggle">
+    <span class="toggle" (click)="toggle = !toggle">[{{toggle ? '+' : '-'}}]</span>
+    <a [routerLink]="['/user', comment.user]" class="submitted-info">{{comment.user}}</a>
+    <span class="time">{{comment.time_ago}}</span>
+  </div>
+  <div class="comment-tree">
+    <div [hidden]="toggle">
+      <p class="comment-text" [innerHTML]="comment.content"></p>
+      <ul class="subtree">
+        <li *ngFor="let subComment of comment.comments"> 
+          <app-comment [comment]="subComment"></app-comment>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,73 @@
+header
+    background: #fff    
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.05)
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.05)
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.05)
+    #header
+        display: flex
+        padding: 20px 0
+        h1
+            margin: 0
+            width: 40px
+            height: 40px
+            a
+                img
+                    width: 40px
+                    vertical-align: top
+        ul
+            flex: 1
+            margin-bottom: 0
+            letter-spacing: 0.3px
+            display: flex
+            margin-left: 40px
+        .navigation
+            color: #bdbdbd
+            margin-bottom: 0
+            li
+                float: left
+                line-height: 40px
+                padding: 0 16px
+                a
+                    color: #bdbdbd
+                    &:hover
+                        color: #232323
+                    &.active
+                        color: #232323 !important
+                .header-search
+                    width: 300px
+                    border-radius: 5px
+                    height: 36px
+                    outline: none
+                    box-shadow: none
+                    border: 1px solid #dcdcdc
+                    margin: 2px 40px 2px
+                    position: relative
+                    padding: 0 10px
+                    &:after
+                        content: '\f002'
+                        position: absolute
+                        top: 0
+                        left: 0
+                        font-family: FontAwesome
+                        font-size: 16px
+        .login
+            flex: 1
+            text-align: right
+            display: flex
+            justify-content: flex-end
+            li
+                line-height: 40px
+                color: #bdbdbd
+                a
+                    color: #232323
+                    font-weight: 500
+.top-content
+    display: flex
+    padding: 20px 0
+    border-bottom: 1px solid #e8e8e8
+    li
+        flex: 1
+        &:last-child
+            text-align: right
+        h2
+            line-height: 40px

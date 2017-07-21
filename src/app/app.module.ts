@@ -1,16 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }    from '@angular/forms';
+import { RouterModule }   from '@angular/router';
+import { routing } from './app.routes';
+import { HttpModule } from '@angular/http';
 
+// Import Services
+import { ApiService } from './shared/services/ApiService';
+import { HNService } from './hn/services/HNService';
+// Import Component
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './core/header/header.component';
+import { FeedComponent } from './hn/feed/feed.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { UserComponent } from './hn/user/user.component';
+import { ItemComponent } from './hn/item/item.component';
+import { CommentComponent } from './hn/item/comment/comment.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FeedComponent,
+    FooterComponent,
+    UserComponent,
+    ItemComponent,
+    CommentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    HNService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
