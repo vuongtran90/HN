@@ -5,18 +5,25 @@
         <h2>{{feedType}}</h2>
       </li>
       <li>
-        <input type="submit" class="submit" value="+ Submit">
+      <div class="wrap-btn" *ngIf="feedItems">
+        <a class="btn-page" *ngIf="pageNumber > 1" [routerLink]="['/' + feedType, pageNumber - 1]">
+          <!--<i class="fa fa-angle-left" aria-hidden="true"></i> -->
+        Prev</a>
+        <a class="btn-page" *ngIf="feedItems.length === 30" [routerLink]="['/' + feedType, pageNumber + 1]">Next 
+          <!--<i class="fa fa-angle-right" aria-hidden="true"></i>-->
+        </a>
+      </div>
       </li>
     </ul>
   </div> 
   <div class="main-content">
     <ul>
       <li class="item-content" *ngFor="let item of feedItems, let i = index">
-        <p class="list-number">{{i + 1}} .</p>
+        <p class="list-number">{{i + feedStart}} .</p>
         <div class="item-content-wrapper">
           <p class="title">
             <a href="{{item.url}}">{{item.title}}</a>
-            <span class="url-info">({{item.domain}})</span>
+            <span class="url-info">{{(item.domain)}}</span>
           </p>
           <div class="info">
             <p>submitted <span class="created-info">{{item.time_ago}}</span> <span *ngIf="feedType !== 'jobs'">by <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a></span></p>
@@ -30,6 +37,5 @@
         </div>
       </li>
     </ul>
-    <p class="btn-next">Next <i class="fa fa-angle-right" aria-hidden="true"></i></p>
   </div>
 </div>

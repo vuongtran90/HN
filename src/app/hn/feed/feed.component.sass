@@ -2,6 +2,7 @@
     padding: 20px 30px
     margin: 20px 0
     background: #fff
+    transition: all .5s cubic-bezier(.55,0,.1,1)
     .top-content
         display: flex
         padding:  0 0 20px
@@ -10,12 +11,21 @@
             flex: 1
             &:last-child
                 text-align: right
+            .wrap-btn
+                .btn-page
+                    font-size: 15px
+                    color: #f4511e
+                    font-weight: 500
+                    margin-left: 20px
+                    line-height: 36px
     .main-content
         ul
             .item-content
                 padding: 20px 0
                 border-bottom: 1px solid #e8e8e8
                 display: flex
+                &:last-child
+                    border-bottom: none
                 .list-number
                     font-weight: 500
                 .item-content-wrapper
@@ -96,8 +106,3 @@
                             position: absolute
                             right: 4px
                             bottom: -46%
-        .btn-next
-            font-size: 16px
-            color: #f4511e
-            padding: 20px 40px
-            font-weight: 500

@@ -14,8 +14,11 @@ import { HNService } from '../services/HNService';
 })
 export class FeedComponent implements OnInit {
   protected typeSub: Subscription;
+  protected pageSub: Subscription;
   protected feedItems: any;
   protected feedType: any;
+  protected feedStart: number;
+  protected pageNumber: number;
 
   constructor(
     protected hnService: HNService,
@@ -25,11 +28,28 @@ export class FeedComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.route.params.forEach((params: Params) => {
+      this.pageNumber = params['page'] ? + params['page'] : 1;
+    });
+
+    //Subscription typefeed
     this.typeSub = this.route.data
       .subscribe(
         (data: any) => {
         this.feedType = data.feedType
       });
+
+    //Subscription page
+    this.pageSub = this.route.params.subscribe(
+      params => {
+        this.pageNumber = params['page'] ? +params['page'] : 1;
+        this.feedStart = (this.pageNumber -1) * 30 + 1;
+        this.getFeedItems();
+        window.scrollTo(0, 0)
+      }
+    );
+
     this.getFeedItems();
   }
 
@@ -38,7 +58,7 @@ export class FeedComponent implements OnInit {
   }
 
   getFeedItems() {
-    this.hnService.getFeed(this.feedType, 1)
+    this.hnService.getFeed(this.feedType, this.pageNumber)
         .subscribe(
           feedItems => {
             this.feedItems = feedItems
