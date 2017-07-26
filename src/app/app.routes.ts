@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { FeedComponent } from './hn/feed/feed.component';
 import { UserComponent } from './hn/user/user.component';
 import { ItemComponent } from './hn/item/item.component'; 
+
+
 const feedRoutes = [{
   path: ':page',
   component: FeedComponent
@@ -43,6 +45,4 @@ const routes: Routes = [
   {path: 'user/:id', component: UserComponent}
 ];
 
-
-// - Updated Export
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -26,14 +26,13 @@
             <span class="url-info">{{(item.domain)}}</span>
           </p>
           <div class="info">
-            <p>submitted <span class="created-info">{{item.time_ago}}</span> <span *ngIf="feedType !== 'jobs'">by <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a></span></p>
+            <p>submitted <span class="created-info">{{item.time_ago}}</span> <span *ngIf="item.type !== 'job'">by</span> <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a></p>
           </div>
         </div>
         <div class="item-tag">
           <a class="comment" *ngIf="feedType !== 'jobs'" routerLink="/item/{{item.id}}">{{item.comments_count}}</a>
           <p class="share-icon"><i class="fa fa-share-alt" aria-hidden="true"></i></p>
-          <p class="point" *ngIf="feedType !== 'jobs'">{{item.points}}<br/><span>points</span></p>
-          <p class="point" *ngIf="feedType === 'jobs'">1<br/><span>point</span></p>
+          <p class="point">{{item.points ? item.points : 1}}<br/><span>{{item.points > 1 ? "points" :"point"}}</span></p>
         </div>
       </li>
     </ul>

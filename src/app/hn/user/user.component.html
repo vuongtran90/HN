@@ -1,10 +1,21 @@
-
-<div *ngIf="userDetail" class="detail">
-  <div class="user-top-info">
-    <p class="user-name">{{userDetail.id}}</p>
-    <p class="karma">{{userDetail.karma}} <i class="fa fa-star-o" aria-hidden="true"></i></p>
+<div *ngIf="userDetail">
+  <div class="item">
+    <div class="left-info">
+      <h2>{{userDetail.id}}</h2>
+      <div class="info">
+        <p>created {{userDetail.created}}</p>
+      </div>
+    </div>
+    <div class="right-info">
+      <p class="point">{{userDetail.karma}}<br/><span><i class="fa fa-star-o" aria-hidden="true"></i></span></p>
+    </div>
   </div>
-  <div class="user-created-info">
-      <p>created {{userDetail.created}}</p>
+  <div class="comments" *ngIf="userDetail.about">
+    <h3>About</h3>
+    <ul class="comment-list">
+      <li>
+        <p [innerHTML]="userDetail.about"></p>
+      </li>
+    </ul>
   </div>
-</div>
+</div>  

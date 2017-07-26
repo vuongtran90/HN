@@ -51,8 +51,8 @@ a {
 pre {
     margin: 10px 0
 }
-a:hover,
-a.active {
+a:hover,a.active,
+a:active,a:focus {
     text-decoration: none;
     color: #232323;
     font-weight: 500;

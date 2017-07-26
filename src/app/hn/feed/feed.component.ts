@@ -46,15 +46,15 @@ export class FeedComponent implements OnInit {
         this.pageNumber = params['page'] ? +params['page'] : 1;
         this.feedStart = (this.pageNumber -1) * 30 + 1;
         this.getFeedItems();
-        window.scrollTo(0, 0)
       }
     );
-
+    
     this.getFeedItems();
   }
 
   ngOnDestroy() {
       this.typeSub.unsubscribe();
+      this.pageSub.unsubscribe();
   }
 
   getFeedItems() {
