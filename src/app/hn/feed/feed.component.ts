@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params, NavigationEnd  } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-
 import 'rxjs/add/operator/filter';
+
+// Social share lib
+import { CeiboShare } from 'ng2-social-share';
 
 //import Service
 import { HNService } from '../services/HNService';

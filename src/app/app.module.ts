@@ -4,7 +4,8 @@ import { FormsModule }    from '@angular/forms';
 import { RouterModule }   from '@angular/router';
 import { routing } from './app.routes';
 import { HttpModule } from '@angular/http';
-
+// Social share lib
+import { CeiboShare } from 'ng2-social-share';
 // Import Services
 import { ApiService } from './shared/services/ApiService';
 import { HNService } from './hn/services/HNService';
@@ -25,7 +26,8 @@ import { CommentComponent } from './hn/item/comment/comment.component';
     FooterComponent,
     UserComponent,
     ItemComponent,
-    CommentComponent
+    CommentComponent,
+    CeiboShare
   ],
   imports: [
     BrowserModule,
