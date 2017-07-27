@@ -5,38 +5,31 @@ import { FeedComponent } from './hn/feed/feed.component';
 import { UserComponent } from './hn/user/user.component';
 import { ItemComponent } from './hn/item/item.component'; 
 
-
-const feedRoutes = [{
-  path: ':page',
-  component: FeedComponent
-}];
-
 const routes: Routes = [
-  {path: '', redirectTo: 'news/1', pathMatch: 'full'},
   {
     path: 'news',
-    children: feedRoutes,
+    component: FeedComponent,
     data: {
         feedType: 'news'
     }
   },
   {
     path: 'show',
-    children: feedRoutes,
+    component: FeedComponent,
     data: {
         feedType: 'show'
     }
   },
   {
     path: 'ask',
-    children: feedRoutes,
+    component: FeedComponent,
     data: {
         feedType: 'ask'
     }
   },
   {
     path: 'jobs',
-    children: feedRoutes,
+    component: FeedComponent,
     data: {
         feedType: 'jobs'
     }

@@ -2,21 +2,21 @@ export const Navigation = [
     {
         id: 1,
         name:'News',
-        url: '/news/1'
+        url: '/news'
     },
     {
         id: 2,
         name:'Show',
-        url: '/show/1'
+        url: '/show'
     },
     {
         id: 3,
         name:'Ask',
-        url: '/ask/1'
+        url: '/ask'
     },
     {
         id: 4,
         name:'Jobs',
-        url: '/jobs/1'
+        url: '/jobs'
     }
 ]
