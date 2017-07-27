@@ -7,10 +7,8 @@
       <li>
       <div class="wrap-btn" *ngIf="feedItems">
         <a class="btn-page" *ngIf="pageNumber > 1" [routerLink]="['/' + feedType, pageNumber - 1]">
-          <!--<i class="fa fa-angle-left" aria-hidden="true"></i> -->
         Prev</a>
-        <a class="btn-page" *ngIf="feedItems.length === 30" [routerLink]="['/' + feedType, pageNumber + 1]">Next 
-          <!--<i class="fa fa-angle-right" aria-hidden="true"></i>-->
+        <a class="btn-page" *ngIf="feedItems.length === 30" [routerLink]="['/' + feedType, pageNumber + 1]">Next
         </a>
       </div>
       </li>

@@ -13,7 +13,6 @@ import { HNService } from './hn/services/HNService';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FeedComponent } from './hn/feed/feed.component';
-import { FooterComponent } from './core/footer/footer.component';
 import { UserComponent } from './hn/user/user.component';
 import { ItemComponent } from './hn/item/item.component';
 import { CommentComponent } from './hn/item/comment/comment.component';
@@ -23,7 +22,6 @@ import { CommentComponent } from './hn/item/comment/comment.component';
     AppComponent,
     HeaderComponent,
     FeedComponent,
-    FooterComponent,
     UserComponent,
     ItemComponent,
     CommentComponent,
