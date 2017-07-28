@@ -3,7 +3,7 @@
     <div class="left-info">
       <h2>{{item.title}}</h2>
       <div class="info">
-        <p>submitted <span class="created-info">{{item.time_ago}}</span> <span *ngIf="feedType !== 'jobs'">by <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a></span></p>
+        <p><span class="created-info">{{item.time_ago}}</span> <span *ngIf="feedType !== 'jobs'">by <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a></span></p>
       </div>
     </div>
     <div class="right-info">

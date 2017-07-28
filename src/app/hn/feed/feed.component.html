@@ -22,7 +22,12 @@
             <span class="url-info">{{(item.domain)}}</span>
           </p>
           <div class="info">
-            <p>submitted <span class="created-info">{{item.time_ago}}</span> <span *ngIf="item.type !== 'job'">by</span> <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a></p>
+            <p>
+              <span class="created-info">{{item.time_ago}}</span>
+              <span *ngIf="item.type !== 'job'">by</span>
+              <a routerLink="/user/{{item.user}}" class="submitted-info">{{item.user}}</a> 
+              <a class="comment mobile" *ngIf="feedType !== 'jobs'" routerLink="/item/{{item.id}}"> | {{item.comments_count}} {{item.comments_count > 0 ? 'comments' : 'comment'}}</a>
+            </p>
           </div>
         </div>
         <div class="item-tag">

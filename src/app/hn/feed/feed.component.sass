@@ -37,13 +37,13 @@
                         font-weight: 400
                         a
                             color: #5c5c5c
+                            margin-right: 5px
                             &:hover
                                 font-weight: 400
                         .url-info
                             font-size: 13px
                             font-weight: normal
                             color: #999
-                            margin-left: 5px
                             letter-spacing: 0.3px
                     .info
                         font-size: 13px
@@ -54,6 +54,8 @@
                             .submitted-info
                                 font-weight: 500
                                 color: #f4511e
+                            .comment.mobile
+                                display: none
                 .item-tag
                     // overflow: hidden
                     .point
@@ -135,3 +137,37 @@
                             position: absolute
                             right: 4px
                             bottom: -46%
+@media (max-width: 600px)
+    .wrap-feed
+        margin: 0
+        padding: 10px 20px
+        .top-content
+            padding: 0 0 10px
+            li
+                h2
+                    font-size: 16px
+                .wrap-btn
+                    .btn-page
+                        font-size: 14px
+        .main-content
+            ul
+                .item-content
+                    padding: 10px 0
+                    .list-number
+                    .item-content-wrapper
+                        .title
+                            a
+                                font-size: 14px
+                        .info
+                            letter-spacing: 0
+                            p
+                                font-size: 12px
+                                .submitted-info
+                                    font-weight: 400
+                                .comment.mobile
+                                    display: inline-block
+                                    font-weight: 400
+                                    &:hover
+                                        font-weight: 400
+                .item-tag
+                    display: none
