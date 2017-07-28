@@ -30,7 +30,6 @@ export class FeedComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pageNumber = 1;
 
     this.route.params.forEach((params: Params) => {
       this.pageNumber = params['page'] ? + params['page'] : 1;
@@ -55,7 +54,7 @@ export class FeedComponent implements OnInit {
    //Subscription page
     this.pageSub = this.route.queryParams.subscribe(
         params => {
-          this.pageNumber = params['page'];
+          this.pageNumber = params['page']? + params['page'] : 1;
           this.feedStart = (this.pageNumber -1) * 30 + 1;
           this.getFeedItems();
       });

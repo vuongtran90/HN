@@ -7,6 +7,11 @@ import { ItemComponent } from './hn/item/item.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/news',
+    pathMatch: 'full'
+  },
+  {
     path: 'news',
     component: FeedComponent,
     data: {
