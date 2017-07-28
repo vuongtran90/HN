@@ -41,20 +41,11 @@ export class FeedComponent implements OnInit {
         (data: any) => {
         this.feedType = data.feedType
       });
-
-    //Subscription page
-    // this.pageSub = this.route.params.subscribe(
-    //   params => {
-    //     this.pageNumber = params['page'] ? +params['page'] : 1;
-    //     this.feedStart = (this.pageNumber -1) * 30 + 1;
-    //     this.getFeedItems();
-    //   }
-    // );
     
-   //Subscription page
+    //Subscription page
     this.pageSub = this.route.queryParams.subscribe(
         params => {
-          this.pageNumber = params['page']? + params['page'] : 1;
+          this.pageNumber = +params['page'] || 1;
           this.feedStart = (this.pageNumber -1) * 30 + 1;
           this.getFeedItems();
       });
@@ -76,5 +67,13 @@ export class FeedComponent implements OnInit {
           }
         );
 
+  }
+
+  nextPage() {
+    this.router.navigate([this.feedType], { queryParams: { page: this.pageNumber + 1 } });
+  }
+
+  prevPage() {
+    this.router.navigate([this.feedType], { queryParams: { page: this.pageNumber - 1 } });
   }
 }

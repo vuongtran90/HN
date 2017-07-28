@@ -6,10 +6,8 @@
       </li>
       <li>
       <div class="wrap-btn" *ngIf="feedItems">
-        <a class="btn-page" *ngIf="pageNumber > 1" [routerLink]="['/' + feedType, pageNumber - 1]">
-        Prev</a>
-        <a class="btn-page" *ngIf="feedItems.length === 30" [routerLink]="['/' + feedType, pageNumber + 1]">Next
-        </a>
+        <a class="btn-page" *ngIf="pageNumber > 1" (click)="prevPage()">Prev</a>
+        <a class="btn-page" *ngIf="feedItems.length === 30" (click)="nextPage()">Next</a>
       </div>
       </li>
     </ul>
