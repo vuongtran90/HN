@@ -10,9 +10,9 @@
       <p class="point">{{userDetail.karma}}<br/><span><i class="fa fa-star-o" aria-hidden="true"></i></span></p>
     </div>
   </div>
-  <div class="comments" *ngIf="userDetail.about">
+  <div class="about" *ngIf="userDetail.about">
     <h3>About</h3>
-    <ul class="comment-list">
+    <ul class="inner-about">
       <li>
         <p [innerHTML]="userDetail.about"></p>
       </li>

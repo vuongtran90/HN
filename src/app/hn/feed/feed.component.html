@@ -19,7 +19,10 @@
         <div class="item-content-wrapper">
           <p class="title">
             <a href="{{item.url}}">{{item.title}}</a>
-            <span class="url-info">{{(item.domain)}}</span>
+            <span class="url-info">
+              <span class="point-mobile"><i>{{item.points ? item.points : 1}}</i> {{item.points > 1 ? "points" :"point"}}</span>
+              <span>({{(item.domain)}})</span>
+            </span>
           </p>
           <div class="info">
             <p>
