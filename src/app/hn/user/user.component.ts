@@ -10,10 +10,10 @@ import { User } from '../models/User';
   styleUrls: ['./user.component.sass']
 })
 export class UserComponent implements OnInit {
-  protected userId: any;
-  protected userDetail: User;
+  userId: any;
+  userDetail: User;
   constructor(
-    private hnService: HNService,
+    protected hnService: HNService,
     protected route: ActivatedRoute,
     ) { }
 

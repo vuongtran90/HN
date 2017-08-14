@@ -35,23 +35,7 @@
         </div>
         <div class="item-tag">
           <a class="comment" *ngIf="feedType !== 'jobs'" routerLink="/item/{{item.id}}">{{item.comments_count}}</a>
-          <div class="share-icon">
-            <i class="fa fa-share-alt" aria-hidden="true"></i>
-            <ul class="social-share">
-              <li>
-                <p>Share</p> 
-              </li>
-              <li>
-                <p ceiboShare  [facebook]="{u: item.url}"><i class="fa fa-facebook" aria-hidden="true"></i></p>
-              </li>
-              <li>
-                <p ceiboShare  [linkedIn]="{url:item.url}"><i class="fa fa-linkedin" aria-hidden="true"></i></p>
-              </li>
-              <li>
-                <p ceiboShare  [googlePlus]="{url:item.url}"><i class="fa fa-google-plus" aria-hidden="true"></i></p>
-              </li>
-            </ul>
-          </div>
+
           <p class="point">{{item.points ? item.points : 1}}<br/><span>{{item.points > 1 ? "points" :"point"}}</span></p>
         </div>
       </li>

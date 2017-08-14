@@ -7,7 +7,7 @@ import { Navigation } from '../../shared/model/header';
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-  protected navigation: any;
+  navigation: any;
 
   constructor(
   ) {

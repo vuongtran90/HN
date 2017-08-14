@@ -3,9 +3,6 @@ import { Router, ActivatedRoute, Params, NavigationEnd  } from '@angular/router'
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/filter';
 
-// Social share lib
-import { CeiboShare } from 'ng2-social-share';
-
 //import Service
 import { HNService } from '../services/HNService';
 
@@ -15,12 +12,12 @@ import { HNService } from '../services/HNService';
   styleUrls: ['./feed.component.sass']
 })
 export class FeedComponent implements OnInit {
-  protected typeSub: Subscription;
-  protected pageSub: Subscription;
-  protected feedItems: any;
-  protected feedType: any;
-  protected feedStart: number;
-  protected pageNumber: number;
+  typeSub: Subscription;
+  pageSub: Subscription;
+  feedItems: any;
+  feedType: any;
+  feedStart: number;
+  pageNumber: number;
 
   constructor(
     protected hnService: HNService,

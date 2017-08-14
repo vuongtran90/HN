@@ -10,12 +10,12 @@ import { HNService } from '../services/HNService';
   styleUrls: ['./item.component.sass']
 })
 export class ItemComponent implements OnInit {
-  private itemId: number;
-  private item: Item;
+  itemId: number;
+  item: Item;
 
   constructor(
-    private route: ActivatedRoute,
-    private hnService: HNService,
+    protected route: ActivatedRoute,
+    protected hnService: HNService,
   ) { }
 
   ngOnInit() {
