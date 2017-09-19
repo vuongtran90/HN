@@ -11,7 +11,7 @@ import { User } from '../models/User'
 
 export class HNService {
     // Api Domain Url
-    private apiUrl = 'http://api.hackerwebapp.com';
+    private apiUrl = 'http://hnewsapp.herokuapp.com';
 
     constructor(
         private apiService: ApiService
